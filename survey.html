@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friend Finder Survey</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Best Match</h1>
+    <div id="match_name">name here</div>
+    <div id="match_pic">picture here</div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+<body>	
+	<div class="container">
+	<h2>Survey Questions</h2>
+	<hr>
+	<h3>
+		<strong>About You</strong>
+	</h3>
+	<h4>Name (Required)</h4>
+	<input type="text" name id="input-name" class="form-control" required>
+	<h4>Link to Photo Image (Required)</h4>
+	<input type="text" name id="input-img" class="form-control" required>
+	<hr>
+<h3>
+	<strong>Question 1</strong>
+</h3>
+<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+<select name id="input-q1" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>
+	<br>
+<h3>
+	<strong>Question 2</strong>
+</h3>
+<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+<select name id="input-q2" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>
+	<br>			
+<h3>
+	<strong>Question 3</strong>
+</h3>
+<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+<select name id="input-q3" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>		
+	<br>
+<h3>
+	<strong>Question 4</strong>
+</h3>
+<h4>You rarely do something just out of sheer curiosity.</h4>
+<select name id="input-q4" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>
+	<br>
+<h3>
+	<strong>Question 5</strong>
+</h3>
+<h4>People can rarley upset you.</h4>
+<select name id="input-q5" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>	
+	<br>
+<h3>
+	<strong>Question 6</strong>
+</h3>
+<h4>It is often difficult for you to relate to other people's feelings</h4>
+<select name id="input-q6" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>	
+	<br>
+<h3>
+	<strong>Question 7</strong>
+</h3>
+<h4>In discussion, truth should be more important than people's sensitivities.</h4>
+<select name id="input-q7" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>	
+	<br>
+<h3>
+	<strong>Question 8</strong>
+</h3>
+<h4>You rarely get carried away by fantasies and ideas.</h4>
+<select name id="input-q8" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>		
+	<br>
+<h3>
+	<strong>Question 9</strong>
+</h3>
+<h4>You think that everyone's views should be respected regardless of whether they are supported by facts or not..</h4>
+<select name id="input-q9" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>		
+	<br>
+<h3>
+	<strong>Question 10</strong>
+</h3>
+<h4>You feel more energenic after spending time with a group of people.</h4>
+<select name id="input-q10" class="custom-select">
+  <option selected>Select an Option</option>
+  <option value="1">1 (Strongly Dissagree)</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5 (Strongly Agree)</option>
+</select>	
+<br>
+<br>
+<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+	<i class="fa fa-check-circle" aria-hidden="true"></i>
+	Submit
+</button>
+<hr>
+
+<footer class="footer">
+	<div class="container">
+	<p>
+		<a href="./api/friends">API Friends List</a>
+		 | 
+		<a href="https://github.com/jsarro/friendfinder">GitHub Repo</a>
+	</p>
+	
+	</div>
+</footer>
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+		
+		var userObj = {
+			"userName": "",
+			"userImg": "",
+			"userqs": []			
+		};
+
+		$("#submit").click(function(){
+			userObj.userName = $("#input-name").val();
+			userObj.userImg = $("#input-img").val();
+			userObj.userqs = [$("#input-q1").val(), $("#input-q2").val(), $("#input-q3").val(), $("#input-q4").val(),
+							  $("#input-q5").val(), $("#input-q6").val(), $("#input-q7").val(), $("#input-q8").val(),
+							  $("#input-q9").val(), $("#input-q10").val()];
+			
+			$.post("/api/friends", userObj)
+
+      		.done(function(data) {
+        		alert(data);
+  			});
+		})
+	</script>
+</body>
+</html>
